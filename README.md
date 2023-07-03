@@ -7,6 +7,8 @@ This project was made as an assignment from the third week of the U of U Coding 
 ## Usage
 
 The webpage contains a form with a text box and a button to generate our random password.
+Here's the  link to the deployed application:
+* https://github.com/MrPolkadot/password-generator
 
 ![Screenshot of webpage view.](assets/screenshot-images/webpage-screenshot.png)
 
