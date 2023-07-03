@@ -30,17 +30,23 @@ function randomSymbol() {
 var generateBtn = document.querySelector("#generate");
 
 //Create function to generate password
-function generatePassword(charLength, lower, upper, numeric, special) {
+function generatePassword() {
   let passwordLength = '';
+  let charLength = 0;
   charLength = prompt("Character length (Must be between 8 - 128 characters.");
   if (charLength < 8 || charLength > 128) {
-    return alert("Must be between 8-128 characters.");
+    alert("Must be between 8 - 128 characters.");
+    return passwordLength;
   }
-  lower = prompt("Include lowercase? (Leave blank for yes or type 'n' for no.");
-  upper = prompt("Include uppercase? Leave blank for yes or type 'n' for no.");
-  numeric = prompt("Include numbers? (Leave blank for yes or type 'n' for no.");
-  special = prompt("Include special characters? (Leave blank for yes or type 'n' for no.");
-  if (charLength > 7 || charLength < 129) {
+  let lower = prompt("Include lowercase? (Leave blank for yes or type 'n' for no.");
+  let upper = prompt("Include uppercase? Leave blank for yes or type 'n' for no.");
+  let numeric = prompt("Include numbers? (Leave blank for yes or type 'n' for no.");
+  let special = prompt("Include special characters? (Leave blank for yes or type 'n' for no.");
+  if ((lower && upper && numeric && special) === 'n') {
+    alert("Must choose yes on at least one criteria.")
+  }
+  //Will evaluate all the criteria entered in the prompts
+  if (charLength > 7 && charLength < 129) {
     for (let i = passwordLength.length; i < charLength; i++) {
       if (lower !== "n") {
         passwordLength += randomLowerCase();
